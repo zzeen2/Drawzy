@@ -1,0 +1,21 @@
+{
+  "name": "-luckydraw-token-(ldt)",
+  "version": "1.0.0",
+  "description": "> **가격대별 랜덤뽑기로 상품을 획득하는 Web3 마켓플레이스**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.0.0",
+    "hardhat": "^2.25.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.3.0",
+    "dotenv": "^17.0.1",
+    "ethers": "^6.14.4"
+  }
+}
