@@ -1,4 +1,4 @@
-#  LuckyDraw Token (LDT) 🎲
+#  Drawzy - LuckyDraw Token (LDT) 🎲
 
 > **가격대별 랜덤뽑기로 상품을 획득하는 Web3 마켓플레이스**
 
