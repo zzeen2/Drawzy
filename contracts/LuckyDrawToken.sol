@@ -20,6 +20,9 @@ contract LuckyDrawToken is ERC20 {
     
     // 사용자별 당첨 쿠폰들
     mapping(address => Coupon[]) public userCoupons;
+
+    // 가입 토큰 받았는지
+    mapping(address => bool) public hasClaimedToken;
     
     event DefaultTokenClaimed(address indexed user, uint256 amount);
     event CouponAdded(address indexed seller, string name, uint256 category, uint256 realPrice, uint256 reward);
@@ -30,6 +33,9 @@ contract LuckyDrawToken is ERC20 {
     }
     
     function claimDefaultToken() external {
+        // 가입 토큰 받았는지 확인
+        require(!hasClaimedToken[msg.sender], "Already token");
+        hasClaimedToken[msg.sender] = true;
         _mint(msg.sender, DEFAULT_TOKEN);
         
         emit DefaultTokenClaimed(msg.sender, DEFAULT_TOKEN);
