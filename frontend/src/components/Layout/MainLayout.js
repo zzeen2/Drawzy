@@ -2,20 +2,17 @@ import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import Sidebar from './Sidebar';
 
-// 별빛 애니메이션
 const twinkle = keyframes`
   0%, 100% { opacity: 0.3; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.2); }
 `;
 
-// 입자 떠다니는 애니메이션
 const float = keyframes`
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   33% { transform: translateY(-10px) rotate(120deg); }
   66% { transform: translateY(5px) rotate(240deg); }
 `;
 
-// 그라디언트 애니메이션
 const gradientShift = keyframes`
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -32,7 +29,6 @@ const LayoutContainer = styled.div`
   overflow: hidden;
 `;
 
-// 배경 별빛 효과
 const StarField = styled.div`
   position: absolute;
   top: 0;
@@ -77,7 +73,6 @@ const StarField = styled.div`
   }
 `;
 
-// 떠다니는 입자들
 const FloatingParticles = styled.div`
   position: absolute;
   top: 0;

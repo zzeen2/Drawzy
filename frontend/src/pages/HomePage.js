@@ -125,7 +125,6 @@ const FloatingParticles = styled.div`
 
 const MainContent = styled.main`
   flex: 1;
-  /* margin-left: 240px; */
   padding-left : 50px;
   padding-right: 50px ;
   position: relative;

@@ -164,13 +164,10 @@ const Sidebar = () => {
   const { account, connectWallet, isNetwork } = wallet;
   const { balance, hasClaimed, getInitialTokens, loading } = useToken(wallet);
 
-  // 지갑 전환 감지
   React.useEffect(() => {
     if (account && prevAccount && account !== prevAccount) {
-      console.log('지갑 전환 감지:', { 이전: prevAccount, 현재: account });
       setIsAccountChanged(true);
       
-      // 3초 후 애니메이션 제거
       setTimeout(() => {
         setIsAccountChanged(false);
       }, 3000);
@@ -188,7 +185,7 @@ const Sidebar = () => {
 
   const handleNavClick = (item) => {
     navigate(item.path);
-    setIsOpen(false); // 모바일에서 메뉴 닫기
+    setIsOpen(false);
   };
 
   const isActive = (path) => location.pathname === path;

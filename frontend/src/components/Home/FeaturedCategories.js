@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { keyframes, css } from 'styled-components';
 
-// 네온 펄스 애니메이션
 const neonPulse = keyframes`
   0%, 100% { 
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);

@@ -3,26 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import styled, { keyframes, css } from 'styled-components';
 import { useWallet } from '../../hooks';
 
-// 캐릭터 바운스 애니메이션
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-10px); }
   60% { transform: translateY(-5px); }
 `;
 
-// 텍스트 글로우 애니메이션
 const glow = keyframes`
   0%, 100% { text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
   50% { text-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.5); }
 `;
 
-// 회전 애니메이션
 const rotate = keyframes`
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 `;
 
-// 펄스 애니메이션
 const pulse = keyframes`
   0%, 100% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.1); opacity: 1; }
@@ -307,7 +303,6 @@ const HeroSection = () => {
       try {
         await connectWallet();
       } catch (error) {
-        console.error('지갑 연결 실패:', error);
       }
     }
   };
