@@ -16,6 +16,20 @@ const useLuckyDraw = (wallet) => {
         if (!contract || !account) return null
         setLoading(true)
         try {
+            // 사전 검증
+            const balance = await contract.balanceOf(account)
+            const requiredAmount = BigInt(category) * BigInt(10**18)
+            
+            if (balance < requiredAmount) {
+                throw new Error("insuficient token")
+            }
+            
+            // 카테고리에 상품이 있는지 확인
+            const categoryCount = await contract.getCategoryCount(category)
+            if (categoryCount === 0) {
+                throw new Error("해당 카테고리에 상품이 없습니다.")
+            }
+            
             const tx = await contract.drawCoupon(category)
             const receipt = await tx.wait()
             
@@ -65,7 +79,25 @@ const useLuckyDraw = (wallet) => {
             alert("뽑기 완료! 내 쿠폰에서 확인하세요!")
             return null
         } catch (error) {
-            alert("뽑기 실패: " + error.message)
+            console.error("뽑기 에러:", error)
+            
+            let errorMessage = "뽑기 실패: "
+            
+            if (error.message.includes("insuficient token")) {
+                errorMessage += "토큰이 부족합니다."
+            } else if (error.message.includes("user rejected")) {
+                errorMessage += "트랜잭션이 취소되었습니다."
+            } else if (error.message.includes("insufficient funds")) {
+                errorMessage += "가스비가 부족합니다."
+            } else if (error.code === 4001) {
+                errorMessage += "사용자가 트랜잭션을 거부했습니다."
+            } else if (error.code === -32603) {
+                errorMessage += "네트워크 오류가 발생했습니다."
+            } else {
+                errorMessage += error.message || "알 수 없는 오류가 발생했습니다."
+            }
+            
+            alert(errorMessage)
             throw error
         } finally {
             setLoading(false)

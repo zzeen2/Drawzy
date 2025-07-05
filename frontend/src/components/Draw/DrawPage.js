@@ -100,25 +100,15 @@ const CategoryButton = styled.button`
   
   &.active {
     background: ${props => props.activeBg};
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-5px);
     border-width: 3px;
-    box-shadow: 
-      0 0 30px ${props => props.borderColor}80,
-      0 20px 50px ${props => props.borderColor}30,
-      inset 0 0 20px ${props => props.borderColor}20;
-    ${css`animation: ${glow} 1.5s ease-in-out infinite;`}
+    box-shadow: 0 0 20px ${props => props.borderColor}60;
     
     &::before {
       opacity: 1;
     }
     
-    .icon {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 15px ${props => props.borderColor});
-    }
-    
     .title {
-      text-shadow: 0 0 10px ${props => props.borderColor};
       font-size: 1.2rem;
     }
   }
@@ -264,7 +254,6 @@ const CheckMark = styled.div`
   justify-content: center;
   font-size: 14px;
   font-weight: bold;
-  ${css`animation: ${pulse} 1s ease-in-out infinite;`}
 `;
 
 const DrawPage = () => {
@@ -370,15 +359,13 @@ const DrawPage = () => {
       
       const result = await drawCoupon(selectedCategory);
       
-      setTimeout(() => {
-        if (result) {
-          setDrawResult(result);
-          setShowResult(true);
-        }
-        setIsDrawing(false);
-        updateBalance();
-        getAllCategoryCounts();
-      }, 3000);
+      if (result) {
+        setDrawResult(result);
+        setShowResult(true);
+      }
+      setIsDrawing(false);
+      updateBalance();
+      getAllCategoryCounts();
       
     } catch (error) {
       alert('뽑기에 실패했습니다: ' + error.message);
@@ -486,7 +473,7 @@ const DrawPage = () => {
 
       <DrawSection>
         <DrawMachine 
-          className={isDrawing ? 'spinning' : 'pulsing'}
+          className={isDrawing ? 'spinning' : ''}
         >
           <DrawIcon>🎰</DrawIcon>
         </DrawMachine>

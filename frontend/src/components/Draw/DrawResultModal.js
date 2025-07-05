@@ -6,11 +6,6 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: scale(1); }
 `;
 
-const sparkle = keyframes`
-  0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-`;
-
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -35,19 +30,6 @@ const ModalContent = styled.div`
   width: 90%;
   position: relative;
   animation: ${fadeIn} 0.5s ease-out;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #00d4ff, #ff00ff, #00ff88, #00d4ff);
-    border-radius: 20px;
-    z-index: -1;
-    animation: ${sparkle} 2s ease-in-out infinite;
-  }
 `;
 
 const CongratulationsTitle = styled.h2`
@@ -129,7 +111,7 @@ const DrawResultModal = ({ result, onClose }) => {
           <CouponName>{result.name}</CouponName>
           <CouponDescription>{result.description}</CouponDescription>
           <CouponValue>{result.realPrice.toLocaleString()}원 상품권</CouponValue>
-          <CouponCode>쿠폰 코드: {result.couponCode}</CouponCode>
+          <CouponCode>{result.code}</CouponCode>
         </CouponCard>
         
         <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '20px' }}>
