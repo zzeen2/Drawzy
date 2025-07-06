@@ -83,7 +83,7 @@ npm start
 
 <!-- 메인 페이지 이미지 -->
 <div align="center">
-  <img src="./images/main-page.png" width="800" alt="메인 페이지"/>
+  <img src="./frontend/assets/main.gif" width="800" alt="메인 페이지"/>
   <br/><b>메인 페이지 - 지갑 연결 및 프로세스 안내</b>
 </div>
 
@@ -97,18 +97,8 @@ npm start
 
 <!-- 상품권 뽑기 이미지 -->
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="./images/draw-page-1.png" width="400" alt="뽑기 페이지 - 카테고리 선택"/>
-        <br/><b>카테고리 선택 화면</b>
-      </td>
-      <td align="center">
-        <img src="./images/draw-page-2.png" width="400" alt="뽑기 페이지 - 뽑기 결과"/>
-        <br/><b>뽑기 결과 모달</b>
-      </td>
-    </tr>
-  </table>
+  <img src="./frontend/assets/draw.gif" width="800" alt="메인 페이지"/>
+  <br/><b>뽑기 페이지 - 가격 카테고리별 뽑기</b>
 </div>
 
 **주요 기능**:
@@ -122,7 +112,7 @@ npm start
 
 <!-- 내 상품권 이미지 -->
 <div align="center">
-  <img src="./images/my-items-page.png" width="800" alt="내 상품권 페이지"/>
+  <img src="./frontend/assets/list.gif" width="800" alt="내 상품권 페이지"/>
   <br/><b>내 상품권 - 획득한 상품권 목록 및 관리</b>
 </div>
 
@@ -137,7 +127,7 @@ npm start
 
 <!-- 대시보드 이미지 -->
 <div align="center">
-  <img src="./images/dashboard-page.png" width="800" alt="대시보드 페이지"/>
+  <img src="./frontend/assets/dash.png" width="800" alt="대시보드 페이지"/>
   <br/><b>대시보드 - 플랫폼 전체 통계 및 실시간 활동</b>
 </div>
 
@@ -152,18 +142,8 @@ npm start
 
 <!-- 상품권 등록 이미지 -->
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="./images/register-step1.png" width="400" alt="상품권 등록 - 1단계"/>
-        <br/><b>1단계: 카테고리 선택</b>
-      </td>
-      <td align="center">
-        <img src="./images/register-step2.png" width="400" alt="상품권 등록 - 2단계"/>
-        <br/><b>2단계: 상품권 정보 입력</b>
-      </td>
-    </tr>
-  </table>
+  <img src="./frontend/assets/add.gif" width="800" alt="메인 페이지"/>
+  <br/><b>추가 페이지 - 가격 카테고리별 선택 및 등록</b>
 </div>
 
 **주요 기능**:
