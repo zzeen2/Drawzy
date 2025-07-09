@@ -48,17 +48,6 @@ npm install
 npm start
 ```
 
-### 📸 이미지 파일 준비
-프로젝트 루트에 `images` 폴더를 생성하고 다음 이미지들을 추가하세요:
-- `main-page.png` - 메인 페이지 스크린샷
-- `draw-page-1.png` - 뽑기 페이지 카테고리 선택 화면
-- `draw-page-2.png` - 뽑기 결과 모달 화면
-- `my-items-page.png` - 내 상품권 페이지 스크린샷
-- `dashboard-page.png` - 대시보드 페이지 스크린샷
-- `register-step1.png` - 상품권 등록 1단계 화면
-- `register-step2.png` - 상품권 등록 2단계 화면
----
-
 ## 💡 주요 기능
 * **가격대별 카테고리 시스템**: 1-6 LDT 카테고리로 상품 자동 분류
 * **투명한 랜덤뽑기**: 블록체인 기반 검증 가능한 랜덤 시스템
